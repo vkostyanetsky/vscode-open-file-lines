@@ -15,7 +15,7 @@ followed by a comma or a full stop.
 
 ## Install
 
-[![Marketplace](https://img.shields.io/visual-studio-marketplace/v/bytecoded.open-file-lines?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=bytecoded.open-file-lines)
+[![Marketplace](https://vsmarketplacebadges.dev/version/bytecoded.open-file-lines.svg?style=flat&label=VS%20Code%20Marketplace&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=bytecoded.open-file-lines)
 
 Search for *Open File Lines* in the Extensions view, or:
 
