@@ -90,7 +90,7 @@
         },
         "openFileLines.delimiters": {
           "type": "string",
-          "default": "`'\"<>|*?,;!=&^()[] \t\u00a0",
+          "default": "`'\"<>|*?,;!=&^()[] \t ",
           "description": "Characters that end a path when it is picked up from the text around the cursor. Backtick and quotes are included, which is why `path:1-2` inside apostrophes works."
         },
         "openFileLines.selectLines": {
@@ -110,7 +110,8 @@
     "test": "node --test \"test/*.test.js\""
   },
   "devDependencies": {
-    "@types/vscode": "^1.75.0"
+    "@types/vscode": "^1.75.0",
+    "@vscode/vsce": "^3.9.2"
   },
   "repository": {
     "type": "git",
