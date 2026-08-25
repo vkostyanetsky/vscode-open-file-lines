@@ -4,4 +4,3 @@ samples/**
 jsconfig.json
 node_modules/**
 .gitignore
-.github/**
