@@ -1,0 +1,123 @@
+{
+  "name": "open-file-lines",
+  "displayName": "Open File Lines",
+  "description": "Click a path:400-410 reference in any text to open the file and select that range",
+  "version": "0.1.1",
+  "publisher": "bytecoded",
+  "license": "MIT",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1F2430",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "open file",
+    "goto line",
+    "line range",
+    "path",
+    "navigation"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "openFileLines.open",
+        "title": "Open File Lines: Open File at Cursor",
+        "category": "Open File Lines"
+      },
+      {
+        "command": "openFileLines.openToSide",
+        "title": "Open File Lines: Open File at Cursor to the Side",
+        "category": "Open File Lines"
+      },
+      {
+        "command": "openFileLines.showLog",
+        "title": "Open File Lines: Show Log",
+        "category": "Open File Lines"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "openFileLines.open",
+        "key": "alt+p",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "openFileLines.openToSide",
+        "key": "alt+shift+p",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "openFileLines.open",
+          "group": "navigation@10"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Open File Lines",
+      "properties": {
+        "openFileLines.searchPaths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "markdownDescription": "Extra folders to look in when a link is not found next to the current file or in a workspace root. Absolute paths are used as is; relative ones are resolved against the current file's folder and against every workspace root. Supports `~`, `${workspaceFolder}` and `${userHome}`."
+        },
+        "openFileLines.extensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            ".md",
+            ".txt",
+            ".ts",
+            ".js",
+            ".json"
+          ],
+          "description": "Extensions tried, in order, when the link has no extension of its own. Set to an empty array to disable guessing."
+        },
+        "openFileLines.delimiters": {
+          "type": "string",
+          "default": "`'\"<>|*?,;!=&^()[] \t\u00a0",
+          "description": "Characters that end a path when it is picked up from the text around the cursor. Backtick and quotes are included, which is why `path:1-2` inside apostrophes works."
+        },
+        "openFileLines.selectLines": {
+          "type": "boolean",
+          "default": true,
+          "description": "Select the referenced line range. When off, the cursor is only moved to the first line."
+        },
+        "openFileLines.preview": {
+          "type": "boolean",
+          "default": false,
+          "description": "Open the file in preview mode (the tab is reused by the next preview and its title stays italic)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vkostyanetsky/vscode-open-file-lines.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vkostyanetsky/vscode-open-file-lines/issues"
+  },
+  "homepage": "https://github.com/vkostyanetsky/vscode-open-file-lines#readme"
+}
