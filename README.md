@@ -111,7 +111,7 @@ And this extension exists because it is optimised for references embedded in pro
 
 Three requirements have to hold at once here:
 
-1. **The range has to survive tokenisation.** `:` and `-` must stay *inside* the token, or `448-487` stops being a range — while every other punctuation mark around it has to be cut away. That takes two separate mechanisms: a delimiter set that ends a token, and a trim pass for wrapping punctuation (`DEFAULT_DELIMITERS` and `TRIM_LEADING` / `TRIM_TRAILING` in `src/parse.js`). A single word-boundary character class cannot express *"`(` ends the token but `-` does not, and a trailing full stop is punctuation rather than part of the name"*.
+1. **The range has to survive tokenisation.** `:` and `-` must stay inside the token, or `448-487` stops being a range — while every other punctuation mark around it has to be cut away. That takes two separate mechanisms: a delimiter set that ends a token, and a trim pass for wrapping punctuation (`DEFAULT_DELIMITERS` and `TRIM_LEADING` / `TRIM_TRAILING` in `src/parse.js`). A single word-boundary character class cannot express "`(` ends the token but `-` does not, and a trailing full stop is punctuation rather than part of the name".
 
 2. **Parentheses have to be delimiters**, which means giving up `path(300,12)`, the compiler-diagnostic form. That trade-off is deliberate: markdown links and parenthesised asides are everywhere in prose, MSVC diagnostics are not. An extension aimed at build output should make the opposite call — and seito-openfile does, which is why a reference written as `(path:448-487` does not resolve there.
 
