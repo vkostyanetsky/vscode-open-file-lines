@@ -7,7 +7,7 @@ Put the cursor on a path reference in any text, press **Alt+P**, and the file op
 ```text
 episodes/e03.md            -> opens the file, selects nothing
 episodes/e03.md:300        -> opens the file, goes to line 300 and selects it
-episodes/e03.md:494-586    -> opens the file, goes to line 494 and selects lines 494..586
+episodes/e03.md:494-586    -> opens the file, goes to line 494 and selects lines 494-586
 ```
 
 Wrapping the reference in backticks or quotes changes nothing — `` `episodes/e03.md:494-586` `` works exactly like the bare form, and so do markdown links, `<angle brackets>`, and references followed by a comma or a full stop.
@@ -37,7 +37,7 @@ Both are also in the editor context menu. If you have text selected, the selecti
 | --- | --- |
 | `path` | open only |
 | `path:300` | line 300 selected |
-| `path:494-586` | lines 494..586 selected |
+| `path:494-586` | lines 494-586 selected |
 | `path#L494-L586`, `path#300` | same, GitHub anchor style |
 | `path:300:12` | cursor at line 300, column 12, nothing selected |
 | `https://…` | handed to the system browser |
