@@ -1,4 +1,4 @@
-# Open File Lines
+# Open File Lines 📄 🔗 ⚡
 
 **English** · [Русский](README.ru.md)
 
@@ -12,7 +12,7 @@ episodes/e03.md:494-586    -> opens the file, goes to line 494 and selects lines
 
 Wrapping the reference in backticks or quotes changes nothing — `` `episodes/e03.md:494-586` `` works exactly like the bare form, and so do markdown links, `<angle brackets>`, and references followed by a comma or a full stop.
 
-## Install
+## 📦 Install
 
 [![Marketplace](https://vsmarketplacebadges.dev/version/bytecoded.open-file-lines.svg?style=flat&label=VS%20Code%20Marketplace&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=bytecoded.open-file-lines)
 
@@ -22,7 +22,7 @@ Search for *Open File Lines* in the Extensions view, or:
 code --install-extension bytecoded.open-file-lines
 ```
 
-## Commands and keys
+## ⌨️ Commands and keys
 
 | Key | Command | What it does |
 | --- | --- | --- |
@@ -31,7 +31,7 @@ code --install-extension bytecoded.open-file-lines
 
 Both are also in the editor context menu. If you have text selected, the selection is used as the reference instead of the token under the cursor.
 
-## Reference syntax
+## 🔗 Reference syntax
 
 | Form | Result |
 | --- | --- |
@@ -44,7 +44,7 @@ Both are also in the editor context menu. If you have text selected, the selecti
 
 A backwards range (`path:586-494`) is read as the same range. Line numbers past the end of the file are clamped to the last line. `path(300,12)` is *not* supported: parentheses have to end a reference so that `[text](path:1-2)` keeps working.
 
-## How a path is resolved
+## 🧭 How a path is resolved
 
 The first existing entry wins:
 
@@ -55,7 +55,7 @@ The first existing entry wins:
 
 If the reference has no extension, the ones from `openFileLines.extensions` are tried in order. When nothing matches, a warning appears with a **Show searched paths** button that lists every location that was probed in the *Open File Lines* output channel. A reference that points at a folder reveals it in the explorer.
 
-## Settings
+## ⚙️ Settings
 
 | Setting | Default | Meaning |
 | --- | --- | --- |
@@ -65,7 +65,7 @@ If the reference has no extension, the ones from `openFileLines.extensions` are 
 | `openFileLines.selectLines` | `true` | select the range; when off, only the cursor is moved |
 | `openFileLines.preview` | `false` | open in preview mode (reused, italic tab) |
 
-## Development
+## 🛠️ Development
 
 ```bash
 npm install
@@ -77,7 +77,7 @@ npm test
 
 `npm test` runs the parsing and path-resolution suites in plain node — no VSCode instance needed. Press `F5` to launch an Extension Development Host; `samples/links.md` has references to try against `samples/episodes/e03.md`, which is 600 numbered lines long.
 
-## Install locally without packaging
+## 🧪 Install locally without packaging
 
 Uninstall the Marketplace build first. Two copies contribute the same commands and both bind `Alt+P`, and VSCode picks between them by scan order:
 
@@ -99,7 +99,7 @@ Or build a `.vsix`:
 npx @vscode/vsce package
 ```
 
-## Prior art, and why this exists
+## 📜 Prior art, and why this exists
 
 The token-under-cursor handling, the search-path fallbacks and the extension guessing reproduce the behaviour of [Fr43nk.seito-openfile](https://marketplace.visualstudio.com/items?itemName=Fr43nk.seito-openfile) — a mature and actively maintained extension in this space. Its path resolution is a good deal richer than what I built here: leading-path mapping, glob-based subfolder search, per-language extension guessing, a quick-open fallback. For pointing at plain paths in code and in terminal output, use it.
 
