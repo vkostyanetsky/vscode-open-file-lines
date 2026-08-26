@@ -2,7 +2,7 @@
   "name": "open-file-lines",
   "displayName": "Open File Lines",
   "description": "Click a path:400-410 reference in any text to open the file and select that range",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "bytecoded",
   "license": "MIT",
   "icon": "icon.png",

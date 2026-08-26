@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.2
+
+- Documentation only, the extension itself is unchanged.
+- Rewrote the README: what the extension is for and why it makes the trade-offs it makes
+  (parentheses as delimiters, anchored range parsing) is now spelled out next to the prior art.
+- Added a Russian README, linked from the English one and kept out of the packaged extension.
+- Fixed the local-install instructions: the Marketplace build has to be uninstalled first, since
+  two copies contribute the same commands and both bind `Alt+P`, and the symlink is now named
+  `bytecoded.open-file-lines` to match the publisher-qualified identifier.
+
 ## 0.1.1
 
 - Fixed: the line range was not selected when the target file was already open —
